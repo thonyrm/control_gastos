@@ -1,69 +1,80 @@
-# React + TypeScript + Vite
+# 🛒 Controlador de gastos con React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación práctica de **gestión de gastos**, desarrollada con **React + TypeScript** para reforzar conceptos clave de hooks, patrones de estado y buenas prácticas en desarrollo frontend.
+La app permite:
 
-Currently, two official plugins are available:
+- **Definir un presupuesto inicial**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Añadir y gestionar gastos dinámicamente**
 
-## Expanding the ESLint configuration
+- **Validar que no se exceda el presupuesto**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Visualizar gráficamente el porcentaje consumido**
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🚀 Características principales
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- 💸 **Visualización del gasto**: gráfico dinámico con el porcentaje del presupuesto gastado. 
+- ⚡ **Rendimiento optimizado** con `useMemo` para cálculos derivados.  
+- 🧩 **Gestión de estado avanzada** con  `useReducer`.  
+- 🌍 **Estado global centralizado** con `useContext`.  
+- 🎨 **UI responsive y moderna** con  **TailwindCSS**.  
+
+---
+
+**Hooks de React aplicados:**
+- `useState` → Manejo de estados locales (inputs, selección de categorias, etc).  
+- `useReducer` → Lógica del controlador de gastos (añadir, quitar, actualizar ).  
+- `useMemo` → Optimización en cálculos de totales(totales y porcentajes).  
+- `useContext` → Estado global sin necesidad de prop drilling..
+---
+
+## 📂 Estructura del proyecto
+
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+├─ components/ # Componentes reutilizables 
+├─ context/ # Lógica para manejar el estado global BudgetContext
+├─ helpers/ # Funciones auxiliares
+├─ Hooks/ # Custom hooks (useBudget)
+├─ reducer/ # Reducer principal  (BudgetReducer)
+├─ types/ # Definición de types (Category, Expenses, etc.)
+├─ data/ # Data local (categorías.)
+└─ App.jsx # Punto de entrada principal
 ```
+---
+
+## 🛠️ Tecnologías utilizadas
+- [Vite](https://vitejs.dev/) — entorno de desarrollo rápido.
+- [React](https://react.dev/) — librería principal.
+- [React-Toastify](https://fkhadra.github.io/react-toastify/) — notificaciones.
+- [React Circular Progressbar](https://www.npmjs.com/package/react-circular-progressbar) — Visualización gráfica.
+- [React Date Picker](https://www.npmjs.com/package/react-date-picker) — Selección de fechas.
+- [React Swipeable List](https://www.npmjs.com/package/react-swipeable-list) — Listas interactivas.
+- [UUID](https://www.npmjs.com/package/uuid) — Identificadores únicos.
+
+
+---
+
+## 🔧 Setup del proyecto
+
+1. Clonar el repositorio:
+   ```
+   git clone https://github.com/thonyrm/control_gastos.git
+   ```
+2. Instalar dependencias:
+
+    ```
+    npm install
+    ```
+
+3. Ejecutar en modo desarrollo:
+    ```
+    npm run dev
+    ```
+
+---
+
+## 🌐 Demo en línea
+Puedes probar el proyecto funcionando aquí:  
+👉 [Calculadora de propinas en Vercel](https://control-gastos-beryl-alpha.vercel.app/)
