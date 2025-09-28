@@ -77,4 +77,4 @@ La app permite:
 
 ## 🌐 Demo en línea
 Puedes probar el proyecto funcionando aquí:  
-👉 [Calculadora de propinas en Vercel](https://control-gastos-beryl-alpha.vercel.app/)
+👉 [Controlador de Gastos en Vercel](https://control-gastos-beryl-alpha.vercel.app/)
